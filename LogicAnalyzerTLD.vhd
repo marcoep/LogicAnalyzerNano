@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
--- Title      : Logic Analyzer, actual module
+-- Title      : LogicAnalyzer Top Level Design
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : LogicAnalyzer.vhd
@@ -10,7 +10,8 @@
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
--- Description: Logic Analyzer Top Level design, with right Input Names etc.
+-- Description: Top Level Design for a Logic Analyzer in VHDL for the DE0nano
+-- Board from Terasic.
 -------------------------------------------------------------------------------
 -- Copyright (c) 2014 
 -------------------------------------------------------------------------------
@@ -23,13 +24,23 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity LogicAnalyzer is
+entity LogicAnalyzerTLD is
 
   port (
-    Clk_CI    : in std_logic;
-    Reset_RBI : in std_logic
+    CLOCK_50 : in  std_logic;
+    LED      : out std_logic_vector(7 downto 0);
+    KEY      : in  std_logic_vector(1 downto 0);
+    GPIO     : in  std_logic_vector(33 downto 0);
+    GPIO_IN  : in  std_logic_vector(1 downto 0));
 
-    );
-end entity LogicAnalyzer;
+end entity LogicAnalyzerTLD;
 
 
+architecture Behavioral of LogicAnalyzerTLD is
+
+
+begin  -- architecture Behavioral
+
+
+
+end architecture Behavioral;
